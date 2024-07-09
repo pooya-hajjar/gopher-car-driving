@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-// FatalIfError checks err parameter then print red-color error if it is not nil
+// FatalIfError checks err parameter then print red-color error and exit the program if it is not nil
 func FatalIfError(err error) {
 	if err != nil {
 		fmt.Printf("\033[31m%v\033[0m\n", err)
