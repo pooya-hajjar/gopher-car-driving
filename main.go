@@ -20,7 +20,7 @@ func init() {
 
 	KeyRegistry = keyboard.GetKeyRegistry(Config)
 
-	Game = game.NewGame(KeyRegistry)
+	Game = game.NewGame(KeyRegistry, Config)
 }
 
 func main() {

@@ -1,9 +1,11 @@
 package game
 
 import (
+	"fmt"
 	"github.com/hajimehoshi/bitmapfont/v3"
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/text/v2"
+	"github.com/pooya-hajjar/terminal-car-driving/config"
 	"github.com/pooya-hajjar/terminal-car-driving/keyboard"
 )
 
@@ -15,9 +17,10 @@ type Game struct {
 }
 
 // NewGame sets the window size and title then returns a pointer to Game struct
-func NewGame(keyRegistry keyboard.KeyRegistry) *Game {
+func NewGame(keyRegistry keyboard.KeyRegistry, config config.Config) *Game {
+	title := fmt.Sprintf("%s %s", config.CarBrand, config.CarModel)
 	ebiten.SetWindowSize(640, 480)
-	ebiten.SetWindowTitle("terminal car simulator")
+	ebiten.SetWindowTitle(title)
 
 	return &Game{
 		keyRegistry: keyRegistry,
