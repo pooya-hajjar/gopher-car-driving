@@ -28,7 +28,9 @@ type Config struct {
 	GearRKey     string `mapstructure:"GEAR_R_KEY"`
 }
 
-// LoadConfig loads the config from .env file then returns a Config instance
+// LoadConfig loads the configuration from the specified path using Viper,
+// which includes reading from an .env file and environment variables.
+// It returns a Config instance populated with the loaded configuration data.
 func LoadConfig(path string) (config Config, err error) {
 	viper.AddConfigPath(path)
 	viper.SetConfigType("env")

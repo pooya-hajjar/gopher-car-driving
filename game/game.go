@@ -16,7 +16,10 @@ type Game struct {
 	heldKeys    []ebiten.Key
 }
 
-// NewGame sets the window size and title then returns a pointer to Game struct
+// NewGame initializes a new instance of the Game struct with the specified
+// key registry and configuration. It sets the window size and title based on
+// the car brand and model from the provided configuration, then returns a
+// pointer to the newly created Game struct.
 func NewGame(keyRegistry keyboard.KeyRegistry, config config.Config) *Game {
 	title := fmt.Sprintf("%s %s", config.CarBrand, config.CarModel)
 	ebiten.SetWindowSize(640, 480)
