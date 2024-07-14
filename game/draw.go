@@ -9,7 +9,7 @@ import (
 func (g *Game) Draw(screen *ebiten.Image) {
 	var keyStrs []string
 	var keyNames []string
-	for _, k := range g.keys {
+	for _, k := range g.heldKeys {
 		keyStrs = append(keyStrs, k.String())
 		if name := ebiten.KeyName(k); name != "" {
 			keyNames = append(keyNames, name)
