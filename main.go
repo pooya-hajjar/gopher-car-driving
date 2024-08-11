@@ -5,12 +5,13 @@ import (
 	"github.com/pooya-hajjar/terminal-car-driving/exception"
 	"github.com/pooya-hajjar/terminal-car-driving/game"
 	"github.com/pooya-hajjar/terminal-car-driving/keyboard"
+	"github.com/pooya-hajjar/terminal-car-driving/models"
 )
 
 var (
-	Config      config.Config
 	Game        *game.Game
-	KeyRegistry keyboard.KeyRegistry
+	Config      models.Config
+	KeyRegistry models.KeyRegistry
 )
 
 func init() {

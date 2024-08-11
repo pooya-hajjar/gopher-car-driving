@@ -5,22 +5,22 @@ import (
 	"github.com/hajimehoshi/bitmapfont/v3"
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/text/v2"
-	"github.com/pooya-hajjar/terminal-car-driving/config"
 	"github.com/pooya-hajjar/terminal-car-driving/keyboard"
+	"github.com/pooya-hajjar/terminal-car-driving/models"
 )
 
 var fontFace = text.NewGoXFace(bitmapfont.Face)
 
 type Game struct {
-	keyRegistry keyboard.KeyRegistry
+	keyRegistry models.KeyRegistry
 	heldKeys    []ebiten.Key
 }
 
 // NewGame initializes a new instance of the Game struct with the specified
 // key registry and configuration. It sets the window size and title based on
-// the car brand and model from the provided configuration, then returns a
+// the car brand and models from the provided configuration, then returns a
 // pointer to the newly created Game struct.
-func NewGame(keyRegistry keyboard.KeyRegistry, config config.Config) *Game {
+func NewGame(keyRegistry models.KeyRegistry, config models.Config) *Game {
 	title := fmt.Sprintf("%s %s", config.CarBrand, config.CarModel)
 	ebiten.SetWindowSize(640, 480)
 	ebiten.SetWindowTitle(title)
